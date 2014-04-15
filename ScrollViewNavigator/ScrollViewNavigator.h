@@ -10,6 +10,17 @@
 #import "ScrollViewNavigatorDataSource.h"
 #import "ScrollViewNavigatorDelegate.h"
 
-@interface ScrollViewNavigator : UIView <ScrollViewNavigatorDataSource, ScrollViewNavigatorDelegate>
+enum ScrollViewNavigatorTag : NSUInteger {
+    ScrollViewNavigatorTagSectionSpliter = 1,
+    ScrollViewNavigatorTagSectionIcon = 2,
+    ScrollViewNavigatorTagCurrentRowIndicator = 3,
+    ScrollViewNavigatorTagSectionIndexBase = 100,
+    ScrollViewNavigatorTagRowIndexBase = 10000 // assume max section number is 10000-100, that's acceptable in current design.
+};
+
+@interface ScrollViewNavigator : UIView
+
+@property (nonatomic, weak) id <ScrollViewNavigatorDataSource> dataSource;
+@property (nonatomic, weak) id <ScrollViewNavigatorDelegate> delegate;
 
 @end

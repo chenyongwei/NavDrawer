@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "ScrollViewNavigator.h"
+#import "ScrollViewNavigatorDelegate.h"
+#import "ScrollViewNavigatorDataSource.h"
+#import "SectionDataBase.h"
 
-@interface ViewController ()
+@interface ViewController () <ScrollViewNavigatorDelegate, ScrollViewNavigatorDataSource>
 
 @end
 
@@ -32,6 +35,8 @@
                             CGRectGetWidth(self.view.frame),
                             44)];
     navigator.backgroundColor = [UIColor grayColor];
+    navigator.dataSource = self;
+    navigator.delegate = self;
     
     [self.view addSubview:navigator];
 
@@ -42,5 +47,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - ScrollViewNavigatorDataSource
+
+-(NSInteger)numberOfSections
+{
+    return 3;
+}
+
+-(SectionDataBase *)dataOfSection:(NSInteger)section
+{
+    return nil;
+}
+
+-(NSInteger)numberOfActivitiesInSection:(NSInteger)section
+{
+    return 5;
+}
+
+#pragma mark - ScrollViewNavigatorDelegate
+
+-(CGFloat)heightForSectionBar
+{
+    return 30;
+}
+
+-(CGFloat)widthForSectionTab
+{
+    return 30;
+}
+
+-(CGFloat)widthForRowTab
+{
+    return 15;
+}
+
 
 @end

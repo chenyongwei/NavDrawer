@@ -29,35 +29,44 @@
     navigator.backgroundColor = [UIColor grayColor];
     
     [self addSubview:navigator];
-}
-
-#pragma mark - ScrollViewNavigatorDataSource
-
--(NSInteger)numberOfSections
-{
-    return 3;
-}
-
--(NSInteger)numberOfActivitiesInSection:(NSInteger)section
-{
-    return 5;
-}
-
-#pragma mark - ScrollViewNavigatorDelegate
-
--(CGFloat)heightForSectionBar
-{
-    return 30;
-}
-
--(CGFloat)widthForSectionTab
-{
-    return 30;
-}
-
--(CGFloat)widthForRowTab
-{
-    return 15;
+    
+    // count current tab width first
+    CGFloat sectionTabWidth = [self.delegate widthForSectionTab];
+    NSInteger sectionsCount = [self.dataSource numberOfSections];
+    CGFloat rowTabsContainerWidth = CGRectGetWidth(navigator.frame) - sectionTabWidth * sectionsCount;
+    
+    CGFloat sectionStartX = 0;
+    for (int i = 0; i < sectionsCount; i++) {
+        CGFloat sectionWidth = rowTabsContainerWidth + sectionTabWidth;
+        CGFloat sectionHeight = CGRectGetHeight(navigator.frame);
+        
+        UIButton *sectionTab = [[UIButton alloc] initWithFrame:
+                                CGRectMake(sectionStartX, 0, sectionWidth, sectionHeight)];
+        sectionTab.backgroundColor = [UIColor blackColor];
+        sectionTab.tag = ScrollViewNavigatorTagSectionIndexBase + i;
+        // add section touch event handler
+        [sectionTab addTarget:self action:@selector(sectionTabSelected:) forControlEvents:UIControlEventTouchUpInside];
+        // add to sectionBar
+        [navigator insertSubview:sectionTab atIndex:i];
+        
+//        [self addIconOnSection:sectionTab withSectionData:sectionData];
+        SectionDataBase *sectionData = [self.dataSource dataOfSection:i];
+        // add row tabs into current section tab.
+        if (sectionData.isCurrent) {
+//            NSMutableArray *rowsData = sectionData.rows;
+//            [self addRowTabsOnSectionTab:sectionTab withRowsData:rowsData];
+        }
+        
+        // add the split line between tabs
+        if (i > 0) {
+            UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, sectionHeight)];
+            splitView.backgroundColor = [UIColor blackColor];
+            splitView.tag = ScrollViewNavigatorTagSectionSpliter;
+            [sectionTab addSubview:splitView];
+        }
+        
+        sectionStartX += sectionData.isCurrent ? sectionWidth : sectionTabWidth;
+    }
 }
 
 @end

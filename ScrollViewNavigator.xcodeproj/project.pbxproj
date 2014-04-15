@@ -17,6 +17,7 @@
 		8544CA0F18FC557900FF06C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA0618FC557900FF06C3 /* main.m */; };
 		8544CA1118FC557900FF06C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA0A18FC557900FF06C3 /* ViewController.m */; };
 		8544CA1418FC589900FF06C3 /* ScrollViewNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1318FC589900FF06C3 /* ScrollViewNavigator.m */; };
+		8544CA1918FD926F00FF06C3 /* SectionDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1818FD926F00FF06C3 /* SectionDataBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		8544CA1318FC589900FF06C3 /* ScrollViewNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewNavigator.m; sourceTree = "<group>"; };
 		8544CA1518FC58BD00FF06C3 /* ScrollViewNavigatorDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewNavigatorDataSource.h; sourceTree = "<group>"; };
 		8544CA1618FC58CD00FF06C3 /* ScrollViewNavigatorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewNavigatorDelegate.h; sourceTree = "<group>"; };
+		8544CA1718FD926F00FF06C3 /* SectionDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionDataBase.h; sourceTree = "<group>"; };
+		8544CA1818FD926F00FF06C3 /* SectionDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionDataBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				8544CA1318FC589900FF06C3 /* ScrollViewNavigator.m */,
 				8544CA1518FC58BD00FF06C3 /* ScrollViewNavigatorDataSource.h */,
 				8544CA1618FC58CD00FF06C3 /* ScrollViewNavigatorDelegate.h */,
+				8544CA1718FD926F00FF06C3 /* SectionDataBase.h */,
+				8544CA1818FD926F00FF06C3 /* SectionDataBase.m */,
 			);
 			path = ScrollViewNavigator;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			files = (
 				8544CA1118FC557900FF06C3 /* ViewController.m in Sources */,
 				8544CA1418FC589900FF06C3 /* ScrollViewNavigator.m in Sources */,
+				8544CA1918FD926F00FF06C3 /* SectionDataBase.m in Sources */,
 				8544CA0F18FC557900FF06C3 /* main.m in Sources */,
 				8544CA0B18FC557900FF06C3 /* AppDelegate.m in Sources */,
 			);
