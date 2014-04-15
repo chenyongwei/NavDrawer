@@ -29,7 +29,35 @@
     navigator.backgroundColor = [UIColor grayColor];
     
     [self addSubview:navigator];
-    
+}
+
+#pragma mark - ScrollViewNavigatorDataSource
+
+-(NSInteger)numberOfSections
+{
+    return 3;
+}
+
+-(NSInteger)numberOfActivitiesInSection:(NSInteger)section
+{
+    return 5;
+}
+
+#pragma mark - ScrollViewNavigatorDelegate
+
+-(CGFloat)heightForSectionBar
+{
+    return 30;
+}
+
+-(CGFloat)widthForSectionTab
+{
+    return 30;
+}
+
+-(CGFloat)widthForRowTab
+{
+    return 15;
 }
 
 @end

@@ -10,4 +10,10 @@
 
 @protocol ScrollViewNavigatorDataSource <NSObject>
 
+@required
+- (NSInteger)numberOfActivitiesInSection:(NSInteger)section;
+
+@optional
+- (NSInteger)numberOfSections;              // Default is 1 if not implemented
+
 @end
