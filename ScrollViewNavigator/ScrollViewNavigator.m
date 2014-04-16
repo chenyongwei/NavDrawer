@@ -9,6 +9,9 @@
 #import "ScrollViewNavigator.h"
 
 @implementation ScrollViewNavigator
+{
+    NSInteger currentSection, currentActivity;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -52,6 +55,7 @@
         SectionDataBase *sectionData = [self.dataSource dataOfSection:i];
         // add row tabs into current section tab.
         if (sectionData.isCurrent) {
+            currentSection = i;
             //            NSMutableArray *rowsData = sectionData.rows;
             //            [self addRowTabsOnSectionTab:sectionTab withRowsData:rowsData];
             [self addActivityTabsOnSection:i];
@@ -110,6 +114,7 @@
 
         
         if (activityData.isCurrent) {
+            currentActivity = j;
             // add current row indicator
 //            UIImageView *currRowIndicator = [[UIImageView alloc] initWithFrame:
 //                                             CGRectMake(rowTabX,
@@ -127,13 +132,88 @@
 
 -(void)sectionTabSelected:(id)sender
 {
-    NSLog(@"section tab selected: tag - %d", ((UIView *)sender).tag);
+//    NSLog(@"section tab selected: section - %d", ((UIView *)sender).tag - ScrollViewNavigatorTagSectionIndexBase);
+    UIView *srcView = (UIView *)sender;
+    NSInteger selectedSection = srcView.tag - ScrollViewNavigatorTagSectionIndexBase;
+    
+    if  (currentSection != selectedSection)
+    {
+        // do section tab switch animation
+        [self doSectionChangeAnimationFromIndex:currentSection toIndex:selectedSection];
+        // update current section
+        currentSection = selectedSection;
+    }
+
 }
 
 -(void)rowTabSelected:(id)sender
 {
-    NSLog(@"row tab selected: tag - %d", ((UIView *)sender).tag);
+    NSLog(@"row tab selected: row - %d", ((UIView *)sender).tag - ScrollViewNavigatorTagRowIndexBase);
 }
+
+#pragma Animations
+
+- (void)doSectionChangeAnimationFromIndex:(int)fromIndex toIndex:(int)toIndex {
+    if (fromIndex == toIndex)
+    {
+        return;
+    }
+    NSInteger minIndex = MIN(fromIndex,toIndex);
+    NSInteger maxIndex = MAX(fromIndex,toIndex);
+    
+    BOOL moveToLeft = toIndex == maxIndex;
+    NSInteger rowTabsContainerWidth = CGRectGetWidth(self.frame)
+            - ([self.delegate widthForSectionTab] * [self.dataSource numberOfSections]);
+    
+    [UIView beginAnimations:@"Move" context:nil];
+    [UIView setAnimationDuration:0.1];
+    
+    for (int i=maxIndex; i>minIndex; i--) {
+        UIView *v = [self viewWithTag:i + ScrollViewNavigatorTagSectionIndexBase];
+        CGRect frame = v.frame;
+        frame.origin.x += moveToLeft ? -rowTabsContainerWidth : rowTabsContainerWidth;
+        v.frame = frame;
+    }
+    //code to be executed on the main queue after delay
+    UIView *currSectionView = [self viewWithTag:fromIndex + ScrollViewNavigatorTagSectionIndexBase];
+
+    [self removeRowsOnSection:currSectionView];
+    [self addActivityTabsOnSection:toIndex];
+    
+    [UIView commitAnimations];
+    
+}
+
+//- (void)doRowTabChangeAnimationFromIndex:(int)fromIndex toIndex:(int)toIndex {
+//    if (fromIndex == toIndex)
+//    {
+//        return;
+//    }
+//    
+//    [UIView beginAnimations:@"Move" context:nil];
+//    [UIView setAnimationDuration:0.1];
+//    
+//    UIView *fromV = [self.kwSectionBar viewWithTag:KWTableViewTagCurrentRowIndicator];
+//    UIView *toV = [self.kwSectionBar viewWithTag:toIndex + KWTableViewTagRowIndexBase];
+//    CGRect frame = fromV.frame;
+//    frame.origin.x = toV.frame.origin.x;
+//    fromV.frame = frame;
+//    
+//    [UIView commitAnimations];
+//}
+
+
+- (void)removeRowsOnSection:(UIView *)sectionTab
+{
+    NSArray *subVs = sectionTab.subviews;
+    for (int i = 0; i < subVs.count; i++) {
+        UIView *v = [subVs objectAtIndex:i];
+        if (!(v.tag == ScrollViewNavigatorTagSectionSpliter || v.tag == ScrollViewNavigatorTagSectionIcon)) {
+            [v removeFromSuperview];
+        }
+    }
+}
+
 
 -(void)setDataSource:(id<ScrollViewNavigatorDataSource>)dataSource
 {
