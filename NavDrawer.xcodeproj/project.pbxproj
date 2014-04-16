@@ -10,41 +10,41 @@
 		8544C9C918FC54CE00FF06C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8544C9C818FC54CE00FF06C3 /* Foundation.framework */; };
 		8544C9CB18FC54CE00FF06C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8544C9CA18FC54CE00FF06C3 /* CoreGraphics.framework */; };
 		8544C9CD18FC54CE00FF06C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8544C9CC18FC54CE00FF06C3 /* UIKit.framework */; };
-		8544CA0B18FC557900FF06C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544C9FF18FC557900FF06C3 /* AppDelegate.m */; };
-		8544CA0C18FC557900FF06C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA0018FC557900FF06C3 /* Main.storyboard */; };
-		8544CA0D18FC557900FF06C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA0218FC557900FF06C3 /* Images.xcassets */; };
-		8544CA0E18FC557900FF06C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA0418FC557900FF06C3 /* InfoPlist.strings */; };
-		8544CA0F18FC557900FF06C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA0618FC557900FF06C3 /* main.m */; };
-		8544CA1118FC557900FF06C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA0A18FC557900FF06C3 /* ViewController.m */; };
-		8544CA1418FC589900FF06C3 /* ScrollViewNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1318FC589900FF06C3 /* ScrollViewNavigator.m */; };
-		8544CA1918FD926F00FF06C3 /* SectionDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1818FD926F00FF06C3 /* SectionDataBase.m */; };
-		85F816E018FE658600E3D306 /* ActivityDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F816DF18FE658600E3D306 /* ActivityDataBase.m */; };
+		8544CA2318FECFC100FF06C3 /* ActivityDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1C18FECFC100FF06C3 /* ActivityDataBase.m */; };
+		8544CA2418FECFC100FF06C3 /* NavDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1E18FECFC100FF06C3 /* NavDrawer.m */; };
+		8544CA2518FECFC100FF06C3 /* SectionDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA2218FECFC100FF06C3 /* SectionDataBase.m */; };
+		8544CA3418FECFC800FF06C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA2818FECFC800FF06C3 /* AppDelegate.m */; };
+		8544CA3518FECFC800FF06C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA2918FECFC800FF06C3 /* Main.storyboard */; };
+		8544CA3618FECFC800FF06C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA2B18FECFC800FF06C3 /* Images.xcassets */; };
+		8544CA3718FECFC800FF06C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA2D18FECFC800FF06C3 /* InfoPlist.strings */; };
+		8544CA3818FECFC800FF06C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA2F18FECFC800FF06C3 /* main.m */; };
+		8544CA3A18FECFC800FF06C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA3318FECFC800FF06C3 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8544C9C518FC54CE00FF06C3 /* ScrollViewNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8544C9C518FC54CE00FF06C3 /* NavDrawer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavDrawer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8544C9C818FC54CE00FF06C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8544C9CA18FC54CE00FF06C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8544C9CC18FC54CE00FF06C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8544C9E718FC54CE00FF06C3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8544C9FE18FC557900FF06C3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8544C9FF18FC557900FF06C3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8544CA0118FC557900FF06C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8544CA0218FC557900FF06C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8544CA0518FC557900FF06C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8544CA0618FC557900FF06C3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8544CA0718FC557900FF06C3 /* ScrollViewNavigator-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ScrollViewNavigator-Info.plist"; sourceTree = "<group>"; };
-		8544CA0818FC557900FF06C3 /* ScrollViewNavigator-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ScrollViewNavigator-Prefix.pch"; sourceTree = "<group>"; };
-		8544CA0918FC557900FF06C3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8544CA0A18FC557900FF06C3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8544CA1218FC589900FF06C3 /* ScrollViewNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewNavigator.h; sourceTree = "<group>"; };
-		8544CA1318FC589900FF06C3 /* ScrollViewNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewNavigator.m; sourceTree = "<group>"; };
-		8544CA1518FC58BD00FF06C3 /* ScrollViewNavigatorDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewNavigatorDataSource.h; sourceTree = "<group>"; };
-		8544CA1618FC58CD00FF06C3 /* ScrollViewNavigatorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewNavigatorDelegate.h; sourceTree = "<group>"; };
-		8544CA1718FD926F00FF06C3 /* SectionDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionDataBase.h; sourceTree = "<group>"; };
-		8544CA1818FD926F00FF06C3 /* SectionDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionDataBase.m; sourceTree = "<group>"; };
-		85F816DE18FE658600E3D306 /* ActivityDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDataBase.h; sourceTree = "<group>"; };
-		85F816DF18FE658600E3D306 /* ActivityDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDataBase.m; sourceTree = "<group>"; };
+		8544CA1B18FECFC100FF06C3 /* ActivityDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDataBase.h; sourceTree = "<group>"; };
+		8544CA1C18FECFC100FF06C3 /* ActivityDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDataBase.m; sourceTree = "<group>"; };
+		8544CA1D18FECFC100FF06C3 /* NavDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawer.h; sourceTree = "<group>"; };
+		8544CA1E18FECFC100FF06C3 /* NavDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavDrawer.m; sourceTree = "<group>"; };
+		8544CA1F18FECFC100FF06C3 /* NavDrawerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawerDataSource.h; sourceTree = "<group>"; };
+		8544CA2018FECFC100FF06C3 /* NavDrawerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavDrawerDelegate.h; sourceTree = "<group>"; };
+		8544CA2118FECFC100FF06C3 /* SectionDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionDataBase.h; sourceTree = "<group>"; };
+		8544CA2218FECFC100FF06C3 /* SectionDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionDataBase.m; sourceTree = "<group>"; };
+		8544CA2718FECFC800FF06C3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8544CA2818FECFC800FF06C3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8544CA2A18FECFC800FF06C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8544CA2B18FECFC800FF06C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8544CA2E18FECFC800FF06C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8544CA2F18FECFC800FF06C3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8544CA3018FECFC800FF06C3 /* NavDrawer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NavDrawer-Info.plist"; sourceTree = "<group>"; };
+		8544CA3118FECFC800FF06C3 /* NavDrawer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NavDrawer-Prefix.pch"; sourceTree = "<group>"; };
+		8544CA3218FECFC800FF06C3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8544CA3318FECFC800FF06C3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +64,8 @@
 		8544C9BC18FC54CE00FF06C3 = {
 			isa = PBXGroup;
 			children = (
-				8544C9FD18FC557900FF06C3 /* ScrollViewNavigatorDemo */,
-				8544C9CE18FC54CE00FF06C3 /* ScrollViewNavigator */,
+				8544CA2618FECFC800FF06C3 /* NavDrawerDemo */,
+				8544CA1A18FECFC100FF06C3 /* NavDrawer */,
 				8544C9C718FC54CE00FF06C3 /* Frameworks */,
 				8544C9C618FC54CE00FF06C3 /* Products */,
 			);
@@ -74,7 +74,7 @@
 		8544C9C618FC54CE00FF06C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8544C9C518FC54CE00FF06C3 /* ScrollViewNavigator.app */,
+				8544C9C518FC54CE00FF06C3 /* NavDrawer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,42 +90,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8544C9CE18FC54CE00FF06C3 /* ScrollViewNavigator */ = {
+		8544CA1A18FECFC100FF06C3 /* NavDrawer */ = {
 			isa = PBXGroup;
 			children = (
-				8544CA1218FC589900FF06C3 /* ScrollViewNavigator.h */,
-				8544CA1318FC589900FF06C3 /* ScrollViewNavigator.m */,
-				8544CA1518FC58BD00FF06C3 /* ScrollViewNavigatorDataSource.h */,
-				8544CA1618FC58CD00FF06C3 /* ScrollViewNavigatorDelegate.h */,
-				8544CA1718FD926F00FF06C3 /* SectionDataBase.h */,
-				8544CA1818FD926F00FF06C3 /* SectionDataBase.m */,
-				85F816DE18FE658600E3D306 /* ActivityDataBase.h */,
-				85F816DF18FE658600E3D306 /* ActivityDataBase.m */,
+				8544CA1D18FECFC100FF06C3 /* NavDrawer.h */,
+				8544CA1E18FECFC100FF06C3 /* NavDrawer.m */,
+				8544CA1F18FECFC100FF06C3 /* NavDrawerDataSource.h */,
+				8544CA2018FECFC100FF06C3 /* NavDrawerDelegate.h */,
+				8544CA2118FECFC100FF06C3 /* SectionDataBase.h */,
+				8544CA2218FECFC100FF06C3 /* SectionDataBase.m */,
+				8544CA1B18FECFC100FF06C3 /* ActivityDataBase.h */,
+				8544CA1C18FECFC100FF06C3 /* ActivityDataBase.m */,
 			);
-			path = ScrollViewNavigator;
+			path = NavDrawer;
 			sourceTree = "<group>";
 		};
-		8544C9FD18FC557900FF06C3 /* ScrollViewNavigatorDemo */ = {
+		8544CA2618FECFC800FF06C3 /* NavDrawerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8544C9FE18FC557900FF06C3 /* AppDelegate.h */,
-				8544C9FF18FC557900FF06C3 /* AppDelegate.m */,
-				8544CA0918FC557900FF06C3 /* ViewController.h */,
-				8544CA0A18FC557900FF06C3 /* ViewController.m */,
-				8544CA0018FC557900FF06C3 /* Main.storyboard */,
-				8544CA0218FC557900FF06C3 /* Images.xcassets */,
-				8544CA0318FC557900FF06C3 /* Supporting Files */,
+				8544CA2718FECFC800FF06C3 /* AppDelegate.h */,
+				8544CA2818FECFC800FF06C3 /* AppDelegate.m */,
+				8544CA2918FECFC800FF06C3 /* Main.storyboard */,
+				8544CA2B18FECFC800FF06C3 /* Images.xcassets */,
+				8544CA2C18FECFC800FF06C3 /* Supporting Files */,
+				8544CA3218FECFC800FF06C3 /* ViewController.h */,
+				8544CA3318FECFC800FF06C3 /* ViewController.m */,
 			);
-			path = ScrollViewNavigatorDemo;
+			path = NavDrawerDemo;
 			sourceTree = "<group>";
 		};
-		8544CA0318FC557900FF06C3 /* Supporting Files */ = {
+		8544CA2C18FECFC800FF06C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8544CA0418FC557900FF06C3 /* InfoPlist.strings */,
-				8544CA0618FC557900FF06C3 /* main.m */,
-				8544CA0718FC557900FF06C3 /* ScrollViewNavigator-Info.plist */,
-				8544CA0818FC557900FF06C3 /* ScrollViewNavigator-Prefix.pch */,
+				8544CA2D18FECFC800FF06C3 /* InfoPlist.strings */,
+				8544CA2F18FECFC800FF06C3 /* main.m */,
+				8544CA3018FECFC800FF06C3 /* NavDrawer-Info.plist */,
+				8544CA3118FECFC800FF06C3 /* NavDrawer-Prefix.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -133,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8544C9C418FC54CE00FF06C3 /* ScrollViewNavigator */ = {
+		8544C9C418FC54CE00FF06C3 /* NavDrawer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8544C9F718FC54CE00FF06C3 /* Build configuration list for PBXNativeTarget "ScrollViewNavigator" */;
+			buildConfigurationList = 8544C9F718FC54CE00FF06C3 /* Build configuration list for PBXNativeTarget "NavDrawer" */;
 			buildPhases = (
 				8544C9C118FC54CE00FF06C3 /* Sources */,
 				8544C9C218FC54CE00FF06C3 /* Frameworks */,
@@ -145,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = ScrollViewNavigator;
+			name = NavDrawer;
 			productName = ScrollViewNavigator;
-			productReference = 8544C9C518FC54CE00FF06C3 /* ScrollViewNavigator.app */;
+			productReference = 8544C9C518FC54CE00FF06C3 /* NavDrawer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +159,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Kingway;
 			};
-			buildConfigurationList = 8544C9C018FC54CE00FF06C3 /* Build configuration list for PBXProject "ScrollViewNavigator" */;
+			buildConfigurationList = 8544C9C018FC54CE00FF06C3 /* Build configuration list for PBXProject "NavDrawer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8544C9C418FC54CE00FF06C3 /* ScrollViewNavigator */,
+				8544C9C418FC54CE00FF06C3 /* NavDrawer */,
 			);
 		};
 /* End PBXProject section */
@@ -182,9 +182,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8544CA0C18FC557900FF06C3 /* Main.storyboard in Resources */,
-				8544CA0E18FC557900FF06C3 /* InfoPlist.strings in Resources */,
-				8544CA0D18FC557900FF06C3 /* Images.xcassets in Resources */,
+				8544CA3518FECFC800FF06C3 /* Main.storyboard in Resources */,
+				8544CA3718FECFC800FF06C3 /* InfoPlist.strings in Resources */,
+				8544CA3618FECFC800FF06C3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,30 +195,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8544CA1118FC557900FF06C3 /* ViewController.m in Sources */,
-				85F816E018FE658600E3D306 /* ActivityDataBase.m in Sources */,
-				8544CA1418FC589900FF06C3 /* ScrollViewNavigator.m in Sources */,
-				8544CA1918FD926F00FF06C3 /* SectionDataBase.m in Sources */,
-				8544CA0F18FC557900FF06C3 /* main.m in Sources */,
-				8544CA0B18FC557900FF06C3 /* AppDelegate.m in Sources */,
+				8544CA3A18FECFC800FF06C3 /* ViewController.m in Sources */,
+				8544CA3818FECFC800FF06C3 /* main.m in Sources */,
+				8544CA3418FECFC800FF06C3 /* AppDelegate.m in Sources */,
+				8544CA2318FECFC100FF06C3 /* ActivityDataBase.m in Sources */,
+				8544CA2418FECFC100FF06C3 /* NavDrawer.m in Sources */,
+				8544CA2518FECFC100FF06C3 /* SectionDataBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8544CA0018FC557900FF06C3 /* Main.storyboard */ = {
+		8544CA2918FECFC800FF06C3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8544CA0118FC557900FF06C3 /* Base */,
+				8544CA2A18FECFC800FF06C3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8544CA0418FC557900FF06C3 /* InfoPlist.strings */ = {
+		8544CA2D18FECFC800FF06C3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8544CA0518FC557900FF06C3 /* en */,
+				8544CA2E18FECFC800FF06C3 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -302,9 +302,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ScrollViewNavigatorDemo/Supporting Files/ScrollViewNavigator-Prefix.pch";
-				INFOPLIST_FILE = "ScrollViewNavigatorDemo/Supporting Files/ScrollViewNavigator-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "NavDrawerDemo/Supporting Files/NavDrawer-Prefix.pch";
+				INFOPLIST_FILE = "NavDrawerDemo/Supporting Files/NavDrawer-Info.plist";
+				PRODUCT_NAME = NavDrawer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -315,9 +315,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ScrollViewNavigatorDemo/Supporting Files/ScrollViewNavigator-Prefix.pch";
-				INFOPLIST_FILE = "ScrollViewNavigatorDemo/Supporting Files/ScrollViewNavigator-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "NavDrawerDemo/Supporting Files/NavDrawer-Prefix.pch";
+				INFOPLIST_FILE = "NavDrawerDemo/Supporting Files/NavDrawer-Info.plist";
+				PRODUCT_NAME = NavDrawer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -325,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8544C9C018FC54CE00FF06C3 /* Build configuration list for PBXProject "ScrollViewNavigator" */ = {
+		8544C9C018FC54CE00FF06C3 /* Build configuration list for PBXProject "NavDrawer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8544C9F518FC54CE00FF06C3 /* Debug */,
@@ -334,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8544C9F718FC54CE00FF06C3 /* Build configuration list for PBXNativeTarget "ScrollViewNavigator" */ = {
+		8544C9F718FC54CE00FF06C3 /* Build configuration list for PBXNativeTarget "NavDrawer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8544C9F818FC54CE00FF06C3 /* Debug */,

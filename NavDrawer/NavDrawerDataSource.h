@@ -1,6 +1,6 @@
 //
-//  ScrollViewNavigatorDataSource.h
-//  ScrollViewNavigator
+//  NavDrawerDataSource.h
+//  NavDrawer
 //
 //  Created by Yongwei on 15/4/14.
 //  Copyright (c) 2014 Kingway. All rights reserved.
@@ -10,7 +10,7 @@
 #import "SectionDataBase.h"
 #import "ActivityDataBase.h"
 
-@protocol ScrollViewNavigatorDataSource <NSObject>
+@protocol NavDrawerDataSource <NSObject>
 
 @required
 - (NSInteger)numberOfActivitiesInSection:(NSInteger)section;

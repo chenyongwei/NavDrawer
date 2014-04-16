@@ -1,6 +1,6 @@
 //
-//  ScrollViewNavigatorDelegate.h
-//  ScrollViewNavigator
+//  NavDrawerDelegate.h
+//  NavDrawer
 //
 //  Created by Yongwei on 15/4/14.
 //  Copyright (c) 2014 Kingway. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ScrollViewNavigatorDelegate <NSObject>
+@protocol NavDrawerDelegate <NSObject>
 
 @required
 - (CGFloat)widthForSectionTab;

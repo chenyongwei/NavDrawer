@@ -1,14 +1,14 @@
 //
-//  SectionDataBase.h
-//  ScrollViewNavigator
+//  ActivityDataBase.h
+//  NavDrawer
 //
-//  Created by Yongwei on 16/4/14.
+//  Created by Yongwei on 4/16/14.
 //  Copyright (c) 2014 Kingway. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface SectionDataBase : NSObject
+@interface ActivityDataBase : NSObject
 
 @property(nonatomic) BOOL isCurrent;
 

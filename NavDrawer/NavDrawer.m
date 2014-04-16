@@ -1,14 +1,14 @@
 //
-//  ScrollViewNavigator.m
-//  ScrollViewNavigator
+//  NavDrawer.m
+//  NavDrawer
 //
 //  Created by Yongwei on 15/4/14.
 //  Copyright (c) 2014 Kingway. All rights reserved.
 //
 
-#import "ScrollViewNavigator.h"
+#import "NavDrawer.h"
 
-@implementation ScrollViewNavigator
+@implementation NavDrawer
 {
     NSInteger currentSection, currentActivity;
 }
@@ -45,7 +45,7 @@
 #if DEBUG
         sectionTab.backgroundColor = [UIColor greenColor];
 #endif
-        sectionTab.tag = ScrollViewNavigatorTagSectionIndexBase + i;
+        sectionTab.tag = NavDrawerTagSectionIndexBase + i;
         // add section touch event handler
         [sectionTab addTarget:self action:@selector(sectionTabSelected:) forControlEvents:UIControlEventTouchUpInside];
         // add to sectionBar
@@ -63,7 +63,7 @@
         if (i > 0) {
             UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, sectionHeight)];
             splitView.backgroundColor = [UIColor blackColor];
-            splitView.tag = ScrollViewNavigatorTagSectionSpliter;
+            splitView.tag = NavDrawerTagSectionSpliter;
             [sectionTab addSubview:splitView];
         }
         
@@ -80,7 +80,7 @@
     CGFloat activityTabHeight = CGRectGetHeight(self.frame);
     CGFloat activityTabY = 0;
     
-    NSInteger tag = ScrollViewNavigatorTagSectionIndexBase + section;
+    NSInteger tag = NavDrawerTagSectionIndexBase + section;
     UIView *sectionTab = [self viewWithTag:tag];
     
     for (int j = 0; j < activityCount; j++)
@@ -94,14 +94,14 @@
                                                                       activityTabY,
                                                                       activityTabWidth,
                                                                       activityTabHeight)];
-        activityTab.tag = ScrollViewNavigatorTagActivityIndexBase + j;
+        activityTab.tag = NavDrawerTagActivityIndexBase + j;
         
 #if DEBUG
         activityTab.backgroundColor = [UIColor redColor];
         
         UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, activityTabHeight)];
         splitView.backgroundColor = [UIColor blackColor];
-        splitView.tag = ScrollViewNavigatorTagSectionSpliter;
+        splitView.tag = NavDrawerTagSectionSpliter;
         [activityTab addSubview:splitView];
 #endif
         
@@ -117,7 +117,7 @@
                                                         activityTabWidth,
                                                         activityTabHeight)];
             currActivityIndicator.backgroundColor = [UIColor yellowColor];
-            currActivityIndicator.tag = ScrollViewNavigatorTagCurrentActivityIndicator;
+            currActivityIndicator.tag = NavDrawerTagCurrentActivityIndicator;
             [sectionTab insertSubview:currActivityIndicator aboveSubview:activityTab];
         }
         // add touch up inside event handler for activity icon
@@ -128,7 +128,7 @@
 -(void)sectionTabSelected:(id)sender
 {
     UIView *srcView = (UIView *)sender;
-    NSInteger selectedSection = srcView.tag - ScrollViewNavigatorTagSectionIndexBase;
+    NSInteger selectedSection = srcView.tag - NavDrawerTagSectionIndexBase;
     
     if  (currentSection != selectedSection)
     {
@@ -143,7 +143,7 @@
 -(void)activityTabSelected:(id)sender
 {
     UIView *srcView = (UIView *) sender;
-    NSInteger selectedActivity = srcView.tag - ScrollViewNavigatorTagActivityIndexBase;
+    NSInteger selectedActivity = srcView.tag - NavDrawerTagActivityIndexBase;
     
     if (currentActivity != selectedActivity) {
         // do current activity tab animation
@@ -171,13 +171,13 @@
     [UIView setAnimationDuration:0.1];
     
     for (int i=maxIndex; i>minIndex; i--) {
-        UIView *v = [self viewWithTag:i + ScrollViewNavigatorTagSectionIndexBase];
+        UIView *v = [self viewWithTag:i + NavDrawerTagSectionIndexBase];
         CGRect frame = v.frame;
         frame.origin.x += moveToLeft ? -activityTabsContainerWidth : activityTabsContainerWidth;
         v.frame = frame;
     }
     //code to be executed on the main queue after delay
-    UIView *currSectionView = [self viewWithTag:fromIndex + ScrollViewNavigatorTagSectionIndexBase];
+    UIView *currSectionView = [self viewWithTag:fromIndex + NavDrawerTagSectionIndexBase];
 
     [self removeActivitiesOnSection:currSectionView];
     [self addActivityTabsOnSection:toIndex];
@@ -195,8 +195,8 @@
     [UIView beginAnimations:@"Move" context:nil];
     [UIView setAnimationDuration:0.1];
     
-    UIView *fromView = [self viewWithTag:ScrollViewNavigatorTagCurrentActivityIndicator];
-    UIView *toView = [self viewWithTag:toIndex + ScrollViewNavigatorTagActivityIndexBase];
+    UIView *fromView = [self viewWithTag:NavDrawerTagCurrentActivityIndicator];
+    UIView *toView = [self viewWithTag:toIndex + NavDrawerTagActivityIndexBase];
     CGRect frame = fromView.frame;
     frame.origin.x = toView.frame.origin.x;
     fromView.frame = frame;
@@ -210,20 +210,20 @@
     NSArray *subVs = sectionTab.subviews;
     for (int i = 0; i < subVs.count; i++) {
         UIView *v = [subVs objectAtIndex:i];
-        if (!(v.tag == ScrollViewNavigatorTagSectionSpliter || v.tag == ScrollViewNavigatorTagSectionIcon)) {
+        if (!(v.tag == NavDrawerTagSectionSpliter || v.tag == NavDrawerTagSectionIcon)) {
             [v removeFromSuperview];
         }
     }
 }
 
 
--(void)setDataSource:(id<ScrollViewNavigatorDataSource>)dataSource
+-(void)setDataSource:(id<NavDrawerDataSource>)dataSource
 {
     _dataSource = dataSource;
     [self setup];
 }
 
--(void)setDelegate:(id<ScrollViewNavigatorDelegate>)delegate
+-(void)setDelegate:(id<NavDrawerDelegate>)delegate
 {
     _delegate = delegate;
     [self setup];

@@ -1,6 +1,6 @@
 //
 //  ActivityDataBase.m
-//  ScrollViewNavigator
+//  NavDrawer
 //
 //  Created by Yongwei on 4/16/14.
 //  Copyright (c) 2014 Kingway. All rights reserved.

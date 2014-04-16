@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "ScrollViewNavigator.h"
-#import "ScrollViewNavigatorDelegate.h"
-#import "ScrollViewNavigatorDataSource.h"
+#import "NavDrawer.h"
+#import "NavDrawerDelegate.h"
+#import "NavDrawerDataSource.h"
 #import "SectionDataBase.h"
 
-@interface ViewController () <ScrollViewNavigatorDelegate, ScrollViewNavigatorDataSource>
+@interface ViewController () <NavDrawerDelegate, NavDrawerDataSource>
 
 @end
 
@@ -29,7 +29,7 @@
 
 -(void)setup
 {
-    ScrollViewNavigator *navigator = [[ScrollViewNavigator alloc] initWithFrame:
+    NavDrawer *navigator = [[NavDrawer alloc] initWithFrame:
                  CGRectMake(0,
                             CGRectGetHeight(self.view.frame) - 30,
                             CGRectGetWidth(self.view.frame),
