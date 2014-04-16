@@ -12,6 +12,6 @@
 
 @required
 - (CGFloat)widthForSectionTab;
-- (CGFloat)widthForRowTab;
+- (CGFloat)widthForActivityTab;
 
 @end

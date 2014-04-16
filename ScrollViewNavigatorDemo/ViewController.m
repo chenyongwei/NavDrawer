@@ -87,7 +87,7 @@
     return 30;
 }
 
--(CGFloat)widthForRowTab
+-(CGFloat)widthForActivityTab
 {
     return 15;
 }

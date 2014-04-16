@@ -13,9 +13,9 @@
 enum ScrollViewNavigatorTag : NSUInteger {
     ScrollViewNavigatorTagSectionSpliter = 1,
     ScrollViewNavigatorTagSectionIcon = 2,
-    ScrollViewNavigatorTagCurrentRowIndicator = 3,
+    ScrollViewNavigatorTagCurrentActivityIndicator = 3,
     ScrollViewNavigatorTagSectionIndexBase = 100,
-    ScrollViewNavigatorTagRowIndexBase = 10000 // assume max section number is 10000-100, that's acceptable in current design.
+    ScrollViewNavigatorTagActivityIndexBase = 10000 // assume max section number is 10000-100, that's acceptable in current design.
 };
 
 @interface ScrollViewNavigator : UIView
