@@ -55,7 +55,18 @@
 }
 
 
-#pragma mark - ScrollViewNavigatorDataSource
+-(void)next:(id)sender
+{
+    [navigator nextActivity];
+}
+
+-(void)previous:(id)sender
+{
+    [navigator previousActivity];
+}
+
+
+#pragma mark - NavDrawerDataSource
 
 -(NSInteger)numberOfSections
 {
@@ -86,17 +97,8 @@
     return 5;
 }
 
--(void)next:(id)sender
-{
-    [navigator nextActivity];
-}
 
--(void)previous:(id)sender
-{
-    [navigator previousActivity];
-}
-
-#pragma mark - ScrollViewNavigatorDelegate
+#pragma mark - NavDrawerDelegate
 
 -(CGFloat)widthForSectionTab
 {
@@ -107,6 +109,5 @@
 {
     return 15;
 }
-
 
 @end
