@@ -129,27 +129,34 @@
 {
     UIView *srcView = (UIView *)sender;
     NSInteger selectedSection = srcView.tag - NavDrawerTagSectionIndexBase;
-    
-    if  (currentSection != selectedSection)
-    {
-        // do section tab switch animation
-        [self doSectionChangeAnimationFromIndex:currentSection toIndex:selectedSection];
-        // update current section
-        currentSection = selectedSection;
-    }
-
+    [self gotoSection:selectedSection];
 }
 
 -(void)activityTabSelected:(id)sender
 {
     UIView *srcView = (UIView *) sender;
     NSInteger selectedActivity = srcView.tag - NavDrawerTagActivityIndexBase;
-    
-    if (currentActivity != selectedActivity) {
+    [self gotoActivity:selectedActivity];
+}
+
+-(void)gotoSection:(NSInteger)targetSection
+{
+    if  (currentSection != targetSection)
+    {
+        // do section tab switch animation
+        [self doSectionChangeAnimationFromIndex:currentSection toIndex:targetSection];
+        // update current section
+        currentSection = targetSection;
+    }
+}
+
+-(void)gotoActivity:(NSInteger)targetActivity
+{
+    if (currentActivity != targetActivity) {
         // do current activity tab animation
-        [self doActivityTabChangeAnimationFromIndex:currentActivity toIndex:selectedActivity];
+        [self doActivityTabChangeAnimationFromIndex:currentActivity toIndex:targetActivity];
         // update data
-        currentActivity = selectedActivity;
+        currentActivity = targetActivity;
     }
 }
 
@@ -216,6 +223,49 @@
     }
 }
 
+-(void)nextActivity
+{
+    NSLog(@"goto next activity");
+    NSInteger activitiesCount = [self.dataSource numberOfActivitiesInSection:currentSection];
+    if (currentActivity == activitiesCount - 1) {
+        // last activity of current section,
+        // should move to first activity of next section
+        NSInteger sectionsCount = [self.dataSource numberOfSections];
+        if (currentSection == sectionsCount - 1) {
+            // last section
+            // do nothing
+            NSLog(@"!!!!!! in last section, last activity, can't move to next");
+        }
+        else {
+            [self gotoSection: currentSection + 1];
+            //TODO: should go to firt activity of next section, not implemented
+        }
+    }
+    else {
+        [self gotoActivity: currentActivity + 1];
+    }
+}
+
+-(void)previousActivity
+{
+    NSLog(@"goto previous activity");
+    if (currentActivity == 0) {
+        // first activity of current section,
+        // should move to last activity of previous section
+        if (currentSection == 0) {
+            // first section
+            // do nothing
+            NSLog(@"!!!!!! in first section, first activity, can't move to previous");
+        }
+        else {
+            [self gotoSection:currentSection - 1];
+            //TODO: should go to last activity of previous section, not implemented
+        }
+    }
+    else {
+        [self gotoActivity:currentActivity - 1];
+    }
+}
 
 -(void)setDataSource:(id<NavDrawerDataSource>)dataSource
 {
@@ -228,5 +278,6 @@
     _delegate = delegate;
     [self setup];
 }
+
 
 @end

@@ -11,7 +11,6 @@
 		8544C9CB18FC54CE00FF06C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8544C9CA18FC54CE00FF06C3 /* CoreGraphics.framework */; };
 		8544C9CD18FC54CE00FF06C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8544C9CC18FC54CE00FF06C3 /* UIKit.framework */; };
 		8544CA2318FECFC100FF06C3 /* ActivityDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1C18FECFC100FF06C3 /* ActivityDataBase.m */; };
-		8544CA2418FECFC100FF06C3 /* NavDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1E18FECFC100FF06C3 /* NavDrawer.m */; };
 		8544CA2518FECFC100FF06C3 /* SectionDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA2218FECFC100FF06C3 /* SectionDataBase.m */; };
 		8544CA3418FECFC800FF06C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA2818FECFC800FF06C3 /* AppDelegate.m */; };
 		8544CA3518FECFC800FF06C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA2918FECFC800FF06C3 /* Main.storyboard */; };
@@ -19,6 +18,7 @@
 		8544CA3718FECFC800FF06C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8544CA2D18FECFC800FF06C3 /* InfoPlist.strings */; };
 		8544CA3818FECFC800FF06C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA2F18FECFC800FF06C3 /* main.m */; };
 		8544CA3A18FECFC800FF06C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA3318FECFC800FF06C3 /* ViewController.m */; };
+		8544CA3B18FED78B00FF06C3 /* NavDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544CA1E18FECFC100FF06C3 /* NavDrawer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,11 +110,11 @@
 			children = (
 				8544CA2718FECFC800FF06C3 /* AppDelegate.h */,
 				8544CA2818FECFC800FF06C3 /* AppDelegate.m */,
+				8544CA3218FECFC800FF06C3 /* ViewController.h */,
+				8544CA3318FECFC800FF06C3 /* ViewController.m */,
 				8544CA2918FECFC800FF06C3 /* Main.storyboard */,
 				8544CA2B18FECFC800FF06C3 /* Images.xcassets */,
 				8544CA2C18FECFC800FF06C3 /* Supporting Files */,
-				8544CA3218FECFC800FF06C3 /* ViewController.h */,
-				8544CA3318FECFC800FF06C3 /* ViewController.m */,
 			);
 			path = NavDrawerDemo;
 			sourceTree = "<group>";
@@ -195,11 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8544CA3B18FED78B00FF06C3 /* NavDrawer.m in Sources */,
 				8544CA3A18FECFC800FF06C3 /* ViewController.m in Sources */,
 				8544CA3818FECFC800FF06C3 /* main.m in Sources */,
 				8544CA3418FECFC800FF06C3 /* AppDelegate.m in Sources */,
 				8544CA2318FECFC100FF06C3 /* ActivityDataBase.m in Sources */,
-				8544CA2418FECFC100FF06C3 /* NavDrawer.m in Sources */,
 				8544CA2518FECFC100FF06C3 /* SectionDataBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

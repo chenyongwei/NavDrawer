@@ -14,9 +14,15 @@
 
 @interface ViewController () <NavDrawerDelegate, NavDrawerDataSource>
 
+-(IBAction)next:(id)sender;
+-(IBAction)previous:(id)sender;
+
 @end
 
 @implementation ViewController
+{
+    NavDrawer *navigator;
+}
 
 
 - (void)viewDidLoad
@@ -29,7 +35,7 @@
 
 -(void)setup
 {
-    NavDrawer *navigator = [[NavDrawer alloc] initWithFrame:
+    navigator = [[NavDrawer alloc] initWithFrame:
                  CGRectMake(0,
                             CGRectGetHeight(self.view.frame) - 30,
                             CGRectGetWidth(self.view.frame),
@@ -78,6 +84,16 @@
 -(NSInteger)numberOfActivitiesInSection:(NSInteger)section
 {
     return 5;
+}
+
+-(void)next:(id)sender
+{
+    [navigator nextActivity];
+}
+
+-(void)previous:(id)sender
+{
+    [navigator previousActivity];
 }
 
 #pragma mark - ScrollViewNavigatorDelegate

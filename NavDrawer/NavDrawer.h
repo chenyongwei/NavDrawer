@@ -23,4 +23,7 @@ enum NavDrawerTag : NSUInteger {
 @property (nonatomic, weak) id <NavDrawerDataSource> dataSource;
 @property (nonatomic, weak) id <NavDrawerDelegate> delegate;
 
+-(void)nextActivity;
+-(void)previousActivity;
+
 @end
