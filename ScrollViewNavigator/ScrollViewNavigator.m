@@ -116,14 +116,14 @@
         if (activityData.isCurrent) {
             currentActivity = j;
             // add current row indicator
-//            UIImageView *currRowIndicator = [[UIImageView alloc] initWithFrame:
-//                                             CGRectMake(rowTabX,
-//                                                        rowTabY,
-//                                                        rowTabW,
-//                                                        rowTabH)];
-//            currRowIndicator.image = [UIImage imageNamed:@"activityicon-mask"];
-//            currRowIndicator.tag = KWTableViewTagCurrentRowIndicator;
-//            [sectionTab insertSubview:currRowIndicator aboveSubview:rowTab];
+            UIView *currRowIndicator = [[UIView alloc] initWithFrame:
+                                             CGRectMake(rowTabX,
+                                                        rowTabY,
+                                                        rowTabWidth,
+                                                        rowTabHeight)];
+            currRowIndicator.backgroundColor = [UIColor yellowColor];
+            currRowIndicator.tag = ScrollViewNavigatorTagCurrentRowIndicator;
+            [sectionTab insertSubview:currRowIndicator aboveSubview:rowTab];
         }
         // add touch up inside event handler for activity icon
         [rowTab addTarget:self action:@selector(rowTabSelected:) forControlEvents:UIControlEventTouchUpInside];
@@ -148,7 +148,18 @@
 
 -(void)rowTabSelected:(id)sender
 {
-    NSLog(@"row tab selected: row - %d", ((UIView *)sender).tag - ScrollViewNavigatorTagRowIndexBase);
+//    NSLog(@"row tab selected: row - %d", ((UIView *)sender).tag - ScrollViewNavigatorTagRowIndexBase);
+    UIView *srcView = (UIView *) sender;
+    NSInteger selectedRow = srcView.tag - ScrollViewNavigatorTagRowIndexBase;
+    
+//    int currRowIndex = [self getCurrentRowIndex];
+    
+    if (currentActivity != selectedRow) {
+        // do current row tab animation
+        [self doRowTabChangeAnimationFromIndex:currentActivity toIndex:selectedRow];
+        // update data
+        currentActivity = selectedRow;
+    }
 }
 
 #pragma Animations
@@ -184,23 +195,23 @@
     
 }
 
-//- (void)doRowTabChangeAnimationFromIndex:(int)fromIndex toIndex:(int)toIndex {
-//    if (fromIndex == toIndex)
-//    {
-//        return;
-//    }
-//    
-//    [UIView beginAnimations:@"Move" context:nil];
-//    [UIView setAnimationDuration:0.1];
-//    
-//    UIView *fromV = [self.kwSectionBar viewWithTag:KWTableViewTagCurrentRowIndicator];
-//    UIView *toV = [self.kwSectionBar viewWithTag:toIndex + KWTableViewTagRowIndexBase];
-//    CGRect frame = fromV.frame;
-//    frame.origin.x = toV.frame.origin.x;
-//    fromV.frame = frame;
-//    
-//    [UIView commitAnimations];
-//}
+- (void)doRowTabChangeAnimationFromIndex:(int)fromIndex toIndex:(int)toIndex {
+    if (fromIndex == toIndex)
+    {
+        return;
+    }
+    
+    [UIView beginAnimations:@"Move" context:nil];
+    [UIView setAnimationDuration:0.1];
+    
+    UIView *fromView = [self viewWithTag:ScrollViewNavigatorTagCurrentRowIndicator];
+    UIView *toView = [self viewWithTag:toIndex + ScrollViewNavigatorTagRowIndexBase];
+    CGRect frame = fromView.frame;
+    frame.origin.x = toView.frame.origin.x;
+    fromView.frame = frame;
+    
+    [UIView commitAnimations];
+}
 
 
 - (void)removeRowsOnSection:(UIView *)sectionTab
