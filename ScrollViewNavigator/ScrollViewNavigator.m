@@ -38,11 +38,13 @@
         
         UIButton *sectionTab = [[UIButton alloc] initWithFrame:
                                 CGRectMake(sectionStartX, 0, sectionWidth, sectionHeight)];
-        sectionTab.backgroundColor = [UIColor blackColor];
-        sectionTab.alpha = 0.5f;
+        
+#if DEBUG
+        sectionTab.backgroundColor = [UIColor greenColor];
+#endif
         sectionTab.tag = ScrollViewNavigatorTagSectionIndexBase + i;
         // add section touch event handler
-//        [sectionTab addTarget:self action:@selector(sectionTabSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [sectionTab addTarget:self action:@selector(sectionTabSelected:) forControlEvents:UIControlEventTouchUpInside];
         // add to sectionBar
         [self insertSubview:sectionTab atIndex:i];
         
@@ -52,6 +54,7 @@
         if (sectionData.isCurrent) {
             //            NSMutableArray *rowsData = sectionData.rows;
             //            [self addRowTabsOnSectionTab:sectionTab withRowsData:rowsData];
+            [self addActivityTabsOnSection:i];
         }
         
         // add the split line between tabs
@@ -65,6 +68,71 @@
         sectionStartX += sectionData.isCurrent ? sectionWidth : sectionTabWidth;
     }
  
+}
+
+- (void)addActivityTabsOnSection:(NSInteger)section {
+    CGFloat sectionTabWidth = [self.delegate widthForSectionTab];
+    NSInteger activityCount = [self.dataSource numberOfActivitiesInSection:section];
+
+    CGFloat rowTabWidth = [self.delegate widthForRowTab];
+    CGFloat rowTabHeight = CGRectGetHeight(self.frame);
+    CGFloat rowTabY = 0;
+    
+    NSInteger tag = ScrollViewNavigatorTagSectionIndexBase + section;
+    UIView *sectionTab = [self viewWithTag:tag];
+    
+    for (int j = 0; j < activityCount; j++)
+    {
+        ActivityDataBase *activityData = [self.dataSource dataOfActivity:j atSection:section];
+        
+        // add row icon
+//        UIImage *rowIcon = [UIImage imageNamed:rowData.icon];
+        // calculate the rowTab Rect
+        CGFloat rowTabX = sectionTabWidth + rowTabWidth * j;
+
+        UIButton *rowTab = [[UIButton alloc] initWithFrame:CGRectMake(rowTabX,
+                                                                      rowTabY,
+                                                                      rowTabWidth,
+                                                                      rowTabHeight)];
+//        [rowTab setImage:rowIcon forState:UIControlStateNormal];
+        rowTab.tag = ScrollViewNavigatorTagRowIndexBase + j;
+        
+#if DEBUG
+        rowTab.backgroundColor = [UIColor redColor];
+        
+        UIView *splitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, rowTabHeight)];
+        splitView.backgroundColor = [UIColor blackColor];
+        splitView.tag = ScrollViewNavigatorTagSectionSpliter;
+        [rowTab addSubview:splitView];
+#endif
+        
+        [sectionTab insertSubview:rowTab atIndex:j];
+
+        
+        if (activityData.isCurrent) {
+            // add current row indicator
+//            UIImageView *currRowIndicator = [[UIImageView alloc] initWithFrame:
+//                                             CGRectMake(rowTabX,
+//                                                        rowTabY,
+//                                                        rowTabW,
+//                                                        rowTabH)];
+//            currRowIndicator.image = [UIImage imageNamed:@"activityicon-mask"];
+//            currRowIndicator.tag = KWTableViewTagCurrentRowIndicator;
+//            [sectionTab insertSubview:currRowIndicator aboveSubview:rowTab];
+        }
+        // add touch up inside event handler for activity icon
+        [rowTab addTarget:self action:@selector(rowTabSelected:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+-(void)sectionTabSelected:(id)sender
+{
+    NSLog(@"section tab selected: tag - %d", ((UIView *)sender).tag);
+}
+
+-(void)rowTabSelected:(id)sender
+{
+    NSLog(@"row tab selected: tag - %d", ((UIView *)sender).tag);
 }
 
 -(void)setDataSource:(id<ScrollViewNavigatorDataSource>)dataSource

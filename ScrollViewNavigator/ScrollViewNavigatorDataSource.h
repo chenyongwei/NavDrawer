@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SectionDataBase.h"
+#import "ActivityDataBase.h"
 
 @protocol ScrollViewNavigatorDataSource <NSObject>
 
@@ -15,6 +16,7 @@
 - (NSInteger)numberOfActivitiesInSection:(NSInteger)section;
 
 -(SectionDataBase *)dataOfSection:(NSInteger)section;
+-(ActivityDataBase *)dataOfActivity:(NSInteger)activity atSection:(NSInteger)section;
 
 @optional
 - (NSInteger)numberOfSections;              // Default is 1 if not implemented

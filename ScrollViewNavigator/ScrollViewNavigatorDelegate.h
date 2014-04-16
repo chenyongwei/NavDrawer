@@ -11,7 +11,6 @@
 @protocol ScrollViewNavigatorDelegate <NSObject>
 
 @required
-- (CGFloat)heightForSectionBar;
 - (CGFloat)widthForSectionTab;
 - (CGFloat)widthForRowTab;
 

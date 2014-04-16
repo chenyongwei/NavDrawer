@@ -31,10 +31,10 @@
 {
     ScrollViewNavigator *navigator = [[ScrollViewNavigator alloc] initWithFrame:
                  CGRectMake(0,
-                            CGRectGetHeight(self.view.frame) - 44,
+                            CGRectGetHeight(self.view.frame) - 30,
                             CGRectGetWidth(self.view.frame),
-                            44)];
-    navigator.backgroundColor = [UIColor redColor];
+                            30)];
+    navigator.backgroundColor = [UIColor grayColor];
     navigator.dataSource = self;
     navigator.delegate = self;
     
@@ -58,7 +58,21 @@
 
 -(SectionDataBase *)dataOfSection:(NSInteger)section
 {
-    return nil;
+    SectionDataBase *sectionData = [[SectionDataBase alloc] init];
+    if (section == 0) {
+        sectionData.isCurrent = YES;
+    }
+
+    return sectionData;
+}
+
+-(ActivityDataBase *)dataOfActivity:(NSInteger)activity atSection:(NSInteger)section
+{
+    ActivityDataBase *activityData = [[ActivityDataBase alloc] init];
+    if (activity == 3) {
+        activityData.isCurrent = YES;
+    }
+    return activityData;
 }
 
 -(NSInteger)numberOfActivitiesInSection:(NSInteger)section
@@ -67,11 +81,6 @@
 }
 
 #pragma mark - ScrollViewNavigatorDelegate
-
--(CGFloat)heightForSectionBar
-{
-    return 30;
-}
 
 -(CGFloat)widthForSectionTab
 {
