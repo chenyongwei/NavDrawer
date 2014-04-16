@@ -9,52 +9,49 @@
 #import "ScrollViewNavigator.h"
 
 @implementation ScrollViewNavigator
-{
-    UIView *navigator;
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setup:frame];
+        [self setup];
     }
     return self;
 }
 
-
--(void)setup:(CGRect)aFrame
+-(void)setup
 {
-    navigator = [[UIView alloc] initWithFrame: aFrame];
-    navigator.backgroundColor = [UIColor grayColor];
-    
-    [self addSubview:navigator];
+    if (!self.delegate || !self.dataSource) {
+        return;
+    }
     
     // count current tab width first
     CGFloat sectionTabWidth = [self.delegate widthForSectionTab];
     NSInteger sectionsCount = [self.dataSource numberOfSections];
-    CGFloat rowTabsContainerWidth = CGRectGetWidth(navigator.frame) - sectionTabWidth * sectionsCount;
+    CGFloat rowTabsContainerWidth = CGRectGetWidth(self.frame) - sectionTabWidth * sectionsCount;
+    
     
     CGFloat sectionStartX = 0;
     for (int i = 0; i < sectionsCount; i++) {
         CGFloat sectionWidth = rowTabsContainerWidth + sectionTabWidth;
-        CGFloat sectionHeight = CGRectGetHeight(navigator.frame);
+        CGFloat sectionHeight = CGRectGetHeight(self.frame);
         
         UIButton *sectionTab = [[UIButton alloc] initWithFrame:
                                 CGRectMake(sectionStartX, 0, sectionWidth, sectionHeight)];
         sectionTab.backgroundColor = [UIColor blackColor];
+        sectionTab.alpha = 0.5f;
         sectionTab.tag = ScrollViewNavigatorTagSectionIndexBase + i;
         // add section touch event handler
-        [sectionTab addTarget:self action:@selector(sectionTabSelected:) forControlEvents:UIControlEventTouchUpInside];
+//        [sectionTab addTarget:self action:@selector(sectionTabSelected:) forControlEvents:UIControlEventTouchUpInside];
         // add to sectionBar
-        [navigator insertSubview:sectionTab atIndex:i];
+        [self insertSubview:sectionTab atIndex:i];
         
-//        [self addIconOnSection:sectionTab withSectionData:sectionData];
+        //        [self addIconOnSection:sectionTab withSectionData:sectionData];
         SectionDataBase *sectionData = [self.dataSource dataOfSection:i];
         // add row tabs into current section tab.
         if (sectionData.isCurrent) {
-//            NSMutableArray *rowsData = sectionData.rows;
-//            [self addRowTabsOnSectionTab:sectionTab withRowsData:rowsData];
+            //            NSMutableArray *rowsData = sectionData.rows;
+            //            [self addRowTabsOnSectionTab:sectionTab withRowsData:rowsData];
         }
         
         // add the split line between tabs
@@ -67,6 +64,19 @@
         
         sectionStartX += sectionData.isCurrent ? sectionWidth : sectionTabWidth;
     }
+ 
+}
+
+-(void)setDataSource:(id<ScrollViewNavigatorDataSource>)dataSource
+{
+    _dataSource = dataSource;
+    [self setup];
+}
+
+-(void)setDelegate:(id<ScrollViewNavigatorDelegate>)delegate
+{
+    _delegate = delegate;
+    [self setup];
 }
 
 @end

@@ -34,7 +34,7 @@
                             CGRectGetHeight(self.view.frame) - 44,
                             CGRectGetWidth(self.view.frame),
                             44)];
-    navigator.backgroundColor = [UIColor grayColor];
+    navigator.backgroundColor = [UIColor redColor];
     navigator.dataSource = self;
     navigator.delegate = self;
     
